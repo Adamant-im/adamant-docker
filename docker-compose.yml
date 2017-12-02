@@ -1,0 +1,33 @@
+version: '3'
+services:
+  adamant-node:
+    restart: always
+    build:
+        context: ./
+        dockerfile: ./adamantDockerFile
+    image: adamant/mainnet:latest
+    depends_on:
+      - "db"
+    ports:
+      - "36666:36666"
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_NAME=adamant_main
+      - DATABASE_USER=adamant_main
+      - DATABASE_PASSWORD=password
+      - LOG_LEVEL=debug
+    links:
+      - db
+    tty: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
+  db:
+    restart: always
+    image: postgres:9.6.3
+    environment:
+      - POSTGRES_USER=adamant_main
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      
