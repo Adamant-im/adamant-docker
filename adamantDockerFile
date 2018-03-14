@@ -1,3 +1,4 @@
+#version 0.1.1
 FROM ubuntu:17.10
 
 MAINTAINER darkomen86@gmail.com
