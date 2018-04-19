@@ -1,7 +1,7 @@
-#version 0.1.1
+#version 0.2.0
 FROM ubuntu:17.10
 
-MAINTAINER darkomen86@gmail.com
+MAINTAINER devs@adamant.im
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
