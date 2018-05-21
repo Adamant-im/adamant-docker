@@ -1,4 +1,4 @@
-#version 0.2.0
+#version 0.2.1
 FROM ubuntu:17.10
 
 MAINTAINER devs@adamant.im
