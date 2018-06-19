@@ -15,8 +15,6 @@ services:
       - LOG_LEVEL=debug
     links:
       - db
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
 
   db:
     restart: always
@@ -24,6 +22,4 @@ services:
     environment:
       - POSTGRES_USER=adamant_main
       - POSTGRES_PASSWORD=password
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
       
