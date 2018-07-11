@@ -35,6 +35,11 @@ RUN npm install
 #RUN sed 's/"password": "password"/"password": "'$DATABASE_PASSWORD'"/g' config.json > config.json
 #RUN sed 's/"secu_main"/"'$DATABASE_NAME'"/g' config.json > config.json
 #RUN sed 's/"consoleLogLevel": "none"/"consoleLogLevel": "'$LOG_LEVEL'"/g' config.json > config.json
+#setting up locale
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 EXPOSE 36666
 COPY starter.sh /home/adamant/adamant
