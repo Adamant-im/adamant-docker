@@ -9,7 +9,7 @@ ENV TERM linux
 RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-RUN apt-get update && apt-get install -y git bash
+RUN apt-get update && apt-get install -y git bash locales
 RUN apt-get install -y mc git curl python build-essential curl automake autoconf libtool redis-server wget autotools-dev libsodium-dev
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
